@@ -1,0 +1,227 @@
+:root {
+    --color1: #8E9AAF;
+    --color2: #cbc0d3;
+    --color3: #EFD3D7;
+    --color4: #FEEAFA;
+    --color5: #adb7ff;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url(../fonts/SourceSansPro-Light.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none
+}
+
+h1 {
+    font-size: 3.4rem;
+    font-weight: 200;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+a,
+a:visited {
+    color: var(--color1);
+    text-decoration: none;
+}
+p {
+    line-height: 36px;
+    margin: 25px 0;
+}
+
+.button {
+    border: 1px solid var(--color1);
+    background: transparent;
+    border-radius: 50px;
+    padding: 13px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font: 700 0.75rem "Source Sans Pro";
+    transition: 0.3s;
+}
+
+.button:hover, 
+footer a:hover {
+    border: 1px solid var(--color5);
+    color: var(--color5);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+.section-1,
+.section-2,
+.contact {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.075);
+}
+/* ************** */
+body {
+    font-family: "Source Sans Pro", sans-serif;
+}
+header {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.img-banner {
+    background: url(../img/banner.jpg) no-repeat center/cover;
+}
+
+/* SECTION 1  */
+
+.section-1 {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    min-height: 400px;
+}
+
+.section-1 .img {
+    background: url(../img/img-left.jpg) no-repeat center/cover;
+    box-shadow: 10px 10px 5px 0px var(--color1);
+    -webkit-box-shadow: 10px 10px 5px 0px var(--color1);
+    -moz-box-shadow: 10px 10px 5px 0px var(--color1);
+}
+
+/* SECTION 2  */
+
+.section-2 {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    min-height: 400px;
+}
+
+.section-2 .img {
+    background: url(../img/img-right.jpg) no-repeat center/cover;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px 220px;
+    grid-template-areas: 
+    "input1 input2"
+    "textarea textarea";
+    gap: 10px;
+    width: 85%;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.textarea {
+    grid-area: textarea;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    margin: 20px 0 40px;
+    border-radius: 5px;
+    border: 1px solid var(--color1);
+    padding: 10px;
+    transition: 0.2s;
+}
+input[type="text"]:focus,
+textarea:focus {
+    border: 2px solid var(--color5);
+    border-radius: 10px;
+    background: var(--color3);
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 70px 0 90px;
+    position: relative;  
+}
+footer:before {
+    content: "";
+    position: absolute;
+    background-color: var(--color5);
+    width: 90%;
+    height: 1px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    animation: h1anim 5s ease-in-out forwards;
+    transform-origin: center;
+}
+
+@keyframes h1anim {
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    width: 33%;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+footer a {
+    border: 1px solid var(--color5);
+    border-radius: 50px;
+    width: 44px;
+    height:  44px;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 650px) {
+    header,
+    .section-1,
+    .section-2 {
+        display: block;
+    }
+    header {
+        height: auto;
+    }
+    header .img-banner {
+        height: 50vh;
+        margin-top: 30px;
+    }
+    .container {
+        padding: 15px;
+    }
+}
+
